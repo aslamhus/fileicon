@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="gb-end">
+  <head>
+    <!-- <script src="../lib/FileIcon.js"></script> -->
+    <script type="module">
+      import FileIcon from '../dist/FileIcon.mjs';
+
+      window.onload = function () {
+        // console.log(window.FileIcon.default);
+        // const FileIcon = window.FileIcon.default;
+        const colors = {
+          bg: 'transparent',
+          iconBg: 'coral',
+          textBg: 'rgba(250,250,250,0.2)',
+          text: '#FFF',
+          outline: 'Tomato',
+        };
+        let fileIcon = new FileIcon({ colors: colors });
+        console.log(FileIcon);
+        // Display a custom color theme
+        fileIcon.create('PNG').then((icon) => {
+          icon.style.cssText = 'width:50px; vertical-align:middle;margin:5px;';
+          icon.title = 'custom';
+          document.querySelector('#custom-color').append(icon);
+        });
+        // Display all themes
+        const themes = fileIcon.themes;
+        Object.keys(themes).forEach((theme) => {
+          fileIcon.setColorTheme(theme);
+          fileIcon.create('JPG').then((icon) => {
+            icon.style.cssText =
+              'width:50px; vertical-align:middle;margin:5px;';
+            icon.title = theme;
+            document.body.append(icon);
+          });
+        });
+      };
+    </script>
+    <script>
+      // const FileIcon = require('FileIcon');
+    </script>
+  </head>
+
+  <body style="background-color: rgb(236, 236, 236)">
+    <h1>FileIcon</h1>
+    <h2>Custom Color</h2>
+    <div id="custom-color"></div>
+    <h2>Themes</h2>
+    <p><em>Hover over a fileicon to see it's theme name</em></p>
+  </body>
+</html>

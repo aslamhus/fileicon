@@ -1,0 +1,8 @@
+
+.npmignore
+.DS_Store
+node_modules
+.eslintrc.json
+babel.config.json
+babel-umd.config.json
+yalc.lock
