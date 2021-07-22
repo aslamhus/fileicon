@@ -165,7 +165,6 @@ class FileIcon {
       if (colors) this.colors = colors;
       if (!this.colors) this.colors = this.themes.greyscale;
       const canvas = this.createCanvas(ext);
-      resolve(canvas);
       canvas.toBlob((blob) => {
         const img = FileIcon.blobToImg(blob);
         resolve(img);

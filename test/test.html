@@ -14,6 +14,7 @@
         let fileIcon = new FileIcon({ colors: colors });
         // Display a custom color theme
         fileIcon.create('PNG').then((icon) => {
+          console.log(icon instanceof Blob);
           icon.style.cssText = 'width:50px; vertical-align:middle;margin:5px;';
           icon.title = 'custom';
           document.querySelector('#custom-color').append(icon);

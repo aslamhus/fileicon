@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -193,7 +193,6 @@ var FileIcon = /*#__PURE__*/function () {
 
         var canvas = _this.createCanvas(ext);
 
-        resolve(canvas);
         canvas.toBlob(function (blob) {
           var img = FileIcon.blobToImg(blob);
           resolve(img);
@@ -349,4 +348,4 @@ var FileIcon = /*#__PURE__*/function () {
 }();
 
 var _default = FileIcon;
-exports.default = _default;
+exports["default"] = _default;

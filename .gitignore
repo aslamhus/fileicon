@@ -2,7 +2,7 @@
 .npmignore
 .DS_Store
 node_modules
+.eslintignore
 .eslintrc.json
 babel.config.json
-babel-umd.config.json
 yalc.lock
