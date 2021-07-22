@@ -1,6 +1,6 @@
 {
   "name": "@aslamhus/fileicon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a file icon image with any file extension",
   "main": "./dist/FileIcon.js",
   "scripts": {
