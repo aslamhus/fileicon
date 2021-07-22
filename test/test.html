@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="gb-end">
   <head>
-    <!-- <script src="../lib/FileIcon.js"></script> -->
     <script type="module">
       import FileIcon from '../dist/FileIcon.mjs';
-
       window.onload = function () {
-        // console.log(window.FileIcon.default);
-        // const FileIcon = window.FileIcon.default;
         const colors = {
           bg: 'transparent',
           iconBg: 'coral',
@@ -16,7 +12,6 @@
           outline: 'Tomato',
         };
         let fileIcon = new FileIcon({ colors: colors });
-        console.log(FileIcon);
         // Display a custom color theme
         fileIcon.create('PNG').then((icon) => {
           icon.style.cssText = 'width:50px; vertical-align:middle;margin:5px;';
@@ -35,9 +30,6 @@
           });
         });
       };
-    </script>
-    <script>
-      // const FileIcon = require('FileIcon');
     </script>
   </head>
 
