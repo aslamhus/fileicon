@@ -169,7 +169,6 @@ var FileIcon = /*#__PURE__*/function () {
     value: function setColorTheme(theme) {
       if (this.themes[theme]) {
         this.colors = this.themes[theme];
-        console.log('setting current theme to: ', theme);
         this.currentTheme = theme;
         return this.colors;
       }
@@ -212,7 +211,6 @@ var FileIcon = /*#__PURE__*/function () {
 
       var url = URL.createObjectURL(blob);
       var img = document.createElement('img');
-      console.log('currentTheme', this.currentTheme);
 
       if (this.currentTheme) {
         img.dataset.theme = this.currentTheme;
