@@ -3,6 +3,10 @@
   "version": "1.0.3",
   "description": "Create a file icon image with any file extension",
   "main": "./dist/FileIcon.js",
+  "keywords": [
+    "fileicon",
+    "icon"
+  ],
   "scripts": {
     "prebuild": "npx babel src/FileIcon.js --out-file dist/FileIcon.mjs",
     "build": "npx babel src/FileIcon.js --out-file dist/FileIcon.js --presets @babel/preset-env --plugins @babel/plugin-transform-modules-commonjs",

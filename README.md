@@ -6,6 +6,10 @@ Create a file icon image with any file extension.
 
 `npm install @aslamhus/fileicon`
 
+## Git repo
+
+`git clone https://github.com/aslamhus/fileicon`
+
 ---
 
 ## Basic Usage
@@ -96,9 +100,9 @@ This will produce a file icon like so:
 
 ## Sample Tests
 
-See [test.html](../test/test.html) for more examples
+See [test.html](https://github.com/aslamhus/fileicon/blob/main/test/test.html?raw=true) for more examples
 
 ## License
 
 This project is licensed under the [MIT license](../LICENSE.md)
-see the [LICENSE.md](../LICENSE.md) file for details
+see the [LICENSE.md](https://github.com/aslamhus/fileicon/blob/main/LICENSE.md?raw=true) file for details
