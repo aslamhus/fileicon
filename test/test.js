@@ -25,3 +25,13 @@ describe('Create FileIcon', () => {
     expect(isImage).to.equal(true);
   });
 });
+
+describe('Create FileIcon with a purple theme', () => {
+  it('should return image with a data-theme=purple attribute', async () => {
+    const icon = new FileIcon({ theme: 'purple' });
+    const isPurple = await icon.create('jpg').then(function (icon) {
+      return icon.dataset.theme == 'purple';
+    });
+    expect(isPurple).to.equal(true);
+  });
+});

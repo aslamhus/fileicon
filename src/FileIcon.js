@@ -6,8 +6,9 @@ class FileIcon {
     }
   ) {
     this.initThemes();
+    this.currentTheme = null;
     this.colors = options.colors || this.themes.greyscale;
-    if (this.themes[options.theme]) this.colors = this.themes[options.theme];
+    if (options.theme) this.setColorTheme(options.theme);
   }
 
   initThemes() {
@@ -148,6 +149,7 @@ class FileIcon {
   setColorTheme(theme) {
     if (this.themes[theme]) {
       this.colors = this.themes[theme];
+      this.currentTheme = theme;
       return this.colors;
     }
     return null;
@@ -166,18 +168,21 @@ class FileIcon {
       if (!this.colors) this.colors = this.themes.greyscale;
       const canvas = this.createCanvas(ext);
       canvas.toBlob((blob) => {
-        const img = FileIcon.blobToImg(blob);
+        const img = this.blobToImg(blob);
         resolve(img);
       });
     });
   }
 
-  static blobToImg(blob) {
+  blobToImg(blob) {
     if (!(blob instanceof Blob)) {
       throw new Error('Invalid Argument Exception. blobToImg expected blob');
     }
     const url = URL.createObjectURL(blob);
     const img = document.createElement('img');
+    if (this.currentTheme) {
+      img.dataset.theme = this.currentTheme;
+    }
     img.src = url;
     img.onload = () => {
       URL.revokeObjectURL(blob);

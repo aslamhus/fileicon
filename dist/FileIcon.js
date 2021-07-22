@@ -23,8 +23,9 @@ var FileIcon = /*#__PURE__*/function () {
     _classCallCheck(this, FileIcon);
 
     this.initThemes();
+    this.currentTheme = null;
     this.colors = options.colors || this.themes.greyscale;
-    if (this.themes[options.theme]) this.colors = this.themes[options.theme];
+    if (options.theme) this.setColorTheme(options.theme);
   }
 
   _createClass(FileIcon, [{
@@ -168,6 +169,8 @@ var FileIcon = /*#__PURE__*/function () {
     value: function setColorTheme(theme) {
       if (this.themes[theme]) {
         this.colors = this.themes[theme];
+        console.log('setting current theme to: ', theme);
+        this.currentTheme = theme;
         return this.colors;
       }
 
@@ -194,10 +197,34 @@ var FileIcon = /*#__PURE__*/function () {
         var canvas = _this.createCanvas(ext);
 
         canvas.toBlob(function (blob) {
-          var img = FileIcon.blobToImg(blob);
+          var img = _this.blobToImg(blob);
+
           resolve(img);
         });
       });
+    }
+  }, {
+    key: "blobToImg",
+    value: function blobToImg(blob) {
+      if (!(blob instanceof Blob)) {
+        throw new Error('Invalid Argument Exception. blobToImg expected blob');
+      }
+
+      var url = URL.createObjectURL(blob);
+      var img = document.createElement('img');
+      console.log('currentTheme', this.currentTheme);
+
+      if (this.currentTheme) {
+        img.dataset.theme = this.currentTheme;
+      }
+
+      img.src = url;
+
+      img.onload = function () {
+        URL.revokeObjectURL(blob);
+      };
+
+      return img;
     }
   }, {
     key: "createCanvas",
@@ -213,23 +240,6 @@ var FileIcon = /*#__PURE__*/function () {
       return canvas;
     }
   }], [{
-    key: "blobToImg",
-    value: function blobToImg(blob) {
-      if (!(blob instanceof Blob)) {
-        throw new Error('Invalid Argument Exception. blobToImg expected blob');
-      }
-
-      var url = URL.createObjectURL(blob);
-      var img = document.createElement('img');
-      img.src = url;
-
-      img.onload = function () {
-        URL.revokeObjectURL(blob);
-      };
-
-      return img;
-    }
-  }, {
     key: "drawBg",
     value: function drawBg(canvas, ctx, color) {
       ctx.fillStyle = color;
