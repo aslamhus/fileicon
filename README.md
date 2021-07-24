@@ -10,15 +10,39 @@ Github repo: [https://github.com/aslamhus/fileicon](https://github.com/aslamhus/
 
 ---
 
-## Basic Usage
+## Getting started
+
+For node users:
+
+```js
+// common js
+const { FileIcon } = require('@aslamhus/fileicon');
+// es6
+import { FileIcon } from '@aslamhus/fileicon';
+```
+
+Using in the browser:
+
+```js
+// as a script tag
+<script src='./lib/FileIcon.js'></script>
+
+// as a module
+<script type='module'>
+import { FileIcon } from '../lib/FileIcon.mjs';
+...
+```
+
+## Usage
 
 Draw a file icon with a a jpg extension. The default theme is greyscale.
 
-    import FileIcon from 'FileIcon'
-    const fileIcon = new FileIcon()
-    fileIcon.create('jpg').then((icon) => {
-        document.body.append(icon);
-    });
+```js
+const fileIcon = new FileIcon();
+fileIcon.create('jpg').then((icon) => {
+  document.body.append(icon);
+});
+```
 
 the `create` method returns a `Promise` that resolves to an `img element`.
 
@@ -28,11 +52,15 @@ the `create` method returns a `Promise` that resolves to an `img element`.
 
 To use a color theme, you can pass a theme name to the `FileIcon` `constructor`
 
-    const fileIcon = new FileIcon({ theme: 'purple' })
+```js
+const fileIcon = new FileIcon({ theme: 'purple' });
+```
 
 or use the `setColorTheme` method.
 
-    fileIcon.setColorTheme('purple')
+```js
+fileIcon.setColorTheme('purple');
+```
 
 Currently there are the following themes supported:
 
@@ -55,46 +83,22 @@ Currently there are the following themes supported:
 
 To add your own custom colors, you can pass a color object into the `FileIcon` `constructor` or use the `setColors` method.
 
-    const colors = {
-        bg: 'transparent',
-        iconBg: 'coral',
-        textBg: 'rgba(250,250,250,0.2)',
-        text: '#FFF',
-        outline: 'white',
-    };
-    const fileIcon = new FileIcon({ colors: colors })
+```js
+const colors = {
+  bg: 'transparent',
+  iconBg: 'coral',
+  textBg: 'rgba(250,250,250,0.2)',
+  text: '#FFF',
+  outline: 'white',
+};
+const fileIcon = new FileIcon({ colors: colors });
+```
 
 _Note that you can use **Hexcolor**, a **color name** or an **rgb value**_
 
 This will produce a file icon like so:
 
 ![custom colors file icon](https://github.com/aslamhus/fileicon/blob/main/docs/images/ex1.png?raw=true)
-
-## Deployment
-
-### NPM
-
-    require('@aslamhus/fileicon')
-
-### ES6
-
-    import 'FileIcon' from '@aslamhus/fileicon'
-
-### No Module Bundler
-
-    // for regular script
-    <script src='./lib/FileIcon.js'></script>
-    <script>
-        const FileIcon = window.FileIcon.default;
-        const fileIcon = new FileIcon()
-    </script>
-
-    // for script type module
-    <script type='module'>
-        import FileIcon from './dist/FileIcon.mjs'
-        const fileIcon = new FileIcon()
-
-    </script>
 
 ## Sample Tests
 

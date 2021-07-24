@@ -13,8 +13,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-// eslint-disable-next-line import/prefer-default-export
-var FileIcon = /*#__PURE__*/function () {
+var FileIcon = function () {
   function FileIcon() {
     var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
       colors: null,
