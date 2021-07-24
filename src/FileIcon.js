@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export class FileIcon {
   constructor(
     options = {
@@ -311,5 +312,3 @@ export class FileIcon {
     ctx.restore();
   }
 }
-
-export default FileIcon;

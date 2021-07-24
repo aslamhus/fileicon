@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.FileIcon = void 0;
+exports.FileIcon = void 0;
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -13,6 +13,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+// eslint-disable-next-line import/prefer-default-export
 var FileIcon = /*#__PURE__*/function () {
   function FileIcon() {
     var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
@@ -356,5 +357,3 @@ var FileIcon = /*#__PURE__*/function () {
 }();
 
 exports.FileIcon = FileIcon;
-var _default = FileIcon;
-exports["default"] = _default;

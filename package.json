@@ -8,9 +8,7 @@
     "icon"
   ],
   "scripts": {
-    "prebuild": "npx babel src/FileIcon.js --out-file dist/FileIcon.mjs",
-    "build": "npx babel src/FileIcon.js --out-file dist/FileIcon.js --presets @babel/preset-env --plugins @babel/plugin-transform-modules-commonjs",
-    "postbuild": "npx babel src/FileIcon.js --out-file lib/FileIcon-lib.js --presets @babel/preset-env --plugins @babel/plugin-transform-modules-umd",
+   "build": "bin/build.sh",
     "test": "mocha"
   },
   "author": "Aslam Husain <aslam.percy.husain@gmail.com> (https://github.com/aslamhus)",
