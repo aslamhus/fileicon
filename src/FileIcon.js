@@ -1,4 +1,4 @@
-class FileIcon {
+export class FileIcon {
   constructor(
     options = {
       colors: null,

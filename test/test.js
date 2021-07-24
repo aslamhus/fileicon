@@ -14,7 +14,7 @@ global.URL.createObjectURL = function (blob) {
 const { createCanvas, loadImage } = require('canvas');
 const canvas = createCanvas(200, 200);
 
-const FileIcon = require('../dist/FileIcon').default;
+const { FileIcon } = require('../dist/FileIcon');
 
 describe('Create FileIcon', () => {
   it('should return an image', async () => {
